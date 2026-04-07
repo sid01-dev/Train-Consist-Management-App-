@@ -1,11 +1,8 @@
-public String[] getSortedBogieNames() {
+public boolean searchBogieById(String bogieId) {
 
-    String[] names = bogies.stream()
-            .map(b -> b.getClass().getSimpleName())
+    String[] ids = bogies.stream()
+            .map(b -> b.getBogieId())
             .toArray(String[]::new);
 
-    // UC17 sorting
-    SortUtil.sortBogieNames(names);
-
-    return names;
+    return com.train.consist.util.SearchUtil.linearSearch(ids, bogieId);
 }
