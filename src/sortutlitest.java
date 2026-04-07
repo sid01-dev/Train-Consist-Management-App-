@@ -1,39 +1,29 @@
-package com.train.consist.test;
+@Test
+void testBinarySearch_BogieFound() {
+    String[] arr = {"BG101","BG205","BG309","BG412","BG550"};
+    assertTrue(SearchUtil.binarySearch(arr, "BG309"));
+}
 
-import com.train.consist.util.SearchUtil;
-import org.junit.jupiter.api.Test;
+@Test
+void testBinarySearch_BogieNotFound() {
+    String[] arr = {"BG101","BG205","BG309","BG412","BG550"};
+    assertFalse(SearchUtil.binarySearch(arr, "BG999"));
+}
 
-import static org.junit.jupiter.api.Assertions.*;
+@Test
+void testBinarySearch_FirstElementMatch() {
+    String[] arr = {"BG101","BG205","BG309"};
+    assertTrue(SearchUtil.binarySearch(arr, "BG101"));
+}
 
-class SearchUtilTest {
+@Test
+void testBinarySearch_LastElementMatch() {
+    String[] arr = {"BG101","BG205","BG550"};
+    assertTrue(SearchUtil.binarySearch(arr, "BG550"));
+}
 
-    @Test
-    void testSearch_BogieFound() {
-        String[] arr = {"BG101","BG205","BG309","BG412","BG550"};
-        assertTrue(SearchUtil.linearSearch(arr, "BG309"));
-    }
-
-    @Test
-    void testSearch_BogieNotFound() {
-        String[] arr = {"BG101","BG205","BG309","BG412","BG550"};
-        assertFalse(SearchUtil.linearSearch(arr, "BG999"));
-    }
-
-    @Test
-    void testSearch_FirstElementMatch() {
-        String[] arr = {"BG101","BG205","BG309"};
-        assertTrue(SearchUtil.linearSearch(arr, "BG101"));
-    }
-
-    @Test
-    void testSearch_LastElementMatch() {
-        String[] arr = {"BG101","BG205","BG550"};
-        assertTrue(SearchUtil.linearSearch(arr, "BG550"));
-    }
-
-    @Test
-    void testSearch_SingleElementArray() {
-        String[] arr = {"BG101"};
-        assertTrue(SearchUtil.linearSearch(arr, "BG101"));
-    }
+@Test
+void testBinarySearch_SingleElementArray() {
+    String[] arr = {"BG101"};
+    assertTrue(SearchUtil.binarySearch(arr, "BG101"));
 }

@@ -1,1 +1,1 @@
-System.out.println("7. Search Bogie by ID (Linear Search)");
+System.out.println("8. Search Bogie by ID (Binary Search)");
